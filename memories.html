@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #05080f; --card-bg: rgba(255, 255, 255, 0.04); --card-border: rgba(255, 255, 255, 0.08);
+            --accent-pink: #ff477e; --accent-purple: #8338ec; --text-main: #f8fafc;
+            --font-title: 'Cormorant Garamond', serif; --font-text: 'Outfit', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark); font-family: var(--font-text);
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            color: var(--text-main); position: relative; overflow-x: hidden;
+        }
+
+        .ambient-orb {
+            position: absolute; border-radius: 50%; filter: blur(150px); z-index: 1; opacity: 0.35;
+            pointer-events: none; animation: floatOrb 15s infinite alternate ease-in-out;
+        }
+        .orb-1 { width: 450px; height: 450px; background: var(--accent-pink); top: -10%; left: -10%; }
+        .orb-2 { width: 550px; height: 550px; background: var(--accent-purple); bottom: -15%; right: -10%; animation-delay: -5s; }
+        @keyframes floatOrb { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, 80px) scale(1.15); } }
+
+        .wrapper { position: relative; z-index: 10; width: 100%; max-width: 850px; padding: 24px; display: flex; flex-direction: column; align-items: center; }
+        .glass-card {
+            background: var(--card-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--card-border); border-radius: 24px; padding: 40px;
+            width: 100%; box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255,255,255,0.02);
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: var(--font-title); font-size: 3.5rem; font-weight: 700; margin-bottom: 30px;
+            background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .video-container {
+            width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--card-border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4); margin-bottom: 30px; background: #000;
+        }
+        video { width: 100%; height: auto; display: block; }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--accent-purple); color: white;
+            padding: 12px 30px; border-radius: 30px; font-size: 1rem; font-weight: 400; cursor: pointer;
+            transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+        }
+        .back-btn:hover { background: rgba(131, 56, 236, 0.2); box-shadow: 0 0 20px rgba(131, 56, 236, 0.4); transform: translateY(-2px); color: white; }
+
+        @media (max-width: 600px) { .glass-card { padding: 30px 15px; } .main-title { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
+    <div class="wrapper">
+        <div class="glass-card">
+            
+            <h1 class="main-title">Our Memories 🎬</h1>
+            
+            <div class="video-container">
+                <!-- استبدل الرابط هنا بمسار الفيديو بتاعكم -->
+                <video controls autoplay>
+                    <source src="WhatsApp Video 2026-09-08 at 9.47.48 PM.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+
+            <!-- زرار الرجوع للصفحة الرئيسية -->
+            <a href="index.html" class="back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Go Back
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
